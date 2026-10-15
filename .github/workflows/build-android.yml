@@ -1,0 +1,137 @@
+# Builds Android APKs for Bubble Blast Pro on GitHub (no local Android setup needed).
+#   * debug   APK -> Google TEST ads only (safe to tap while testing)
+#   * release APK -> your REAL AdMob ids (never tap your own ads!)
+# Run it: GitHub repo -> Actions -> "Build Android" -> Run workflow. Download the APK under "Artifacts".
+#
+# NOT verified in the sandbox where this project was written (no Godot / no internet there).
+# If a step fails, open the failed step's log and send me the red error text.
+name: Build Android
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+env:
+  GODOT_VERSION: "4.5-stable"      # the AdMob plugin needs Godot 4.5+; keep the same version you use locally
+  GODOT_TEMPLATE_DIR: "4.5.stable" # folder name Godot uses for export templates
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: ""   # skip the default 'tools' package (no longer exists, breaks the action); we install what we need below
+
+      - name: Install Android SDK packages (versions from Godot's Android export docs)
+        run: |
+          yes | sdkmanager --licenses > /dev/null || true
+          sdkmanager "platform-tools" "build-tools;35.0.1" "platforms;android-35" "cmake;3.10.2.4988404" "ndk;28.1.13356709"
+
+      - name: Install Godot and export templates
+        run: |
+          mkdir -p "$HOME/godot" && cd "$HOME/godot"
+          BASE="https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}"
+          curl -fsSL -o godot.zip      "$BASE/Godot_v${GODOT_VERSION}_linux.x86_64.zip"
+          curl -fsSL -o templates.tpz  "$BASE/Godot_v${GODOT_VERSION}_export_templates.tpz"
+          unzip -q godot.zip
+          sudo mv "Godot_v${GODOT_VERSION}_linux.x86_64" /usr/local/bin/godot && sudo chmod +x /usr/local/bin/godot
+          mkdir -p "$HOME/.local/share/godot/export_templates/${GODOT_TEMPLATE_DIR}"
+          unzip -q templates.tpz -d tpl
+          mv tpl/templates/* "$HOME/.local/share/godot/export_templates/${GODOT_TEMPLATE_DIR}/"
+          godot --version
+
+      - name: Create keystores
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASS: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+        run: |
+          mkdir -p "$HOME/keys"
+          keytool -genkeypair -v -keystore "$HOME/keys/debug.keystore" -storepass android -alias androiddebugkey \
+            -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+          if [ -n "$KEYSTORE_B64" ]; then
+            echo "$KEYSTORE_B64" | base64 -d > "$HOME/keys/release.keystore"
+            echo "REL_USER=${KEY_ALIAS:-upload}" >> "$GITHUB_ENV"
+            echo "REL_PASS=$KEYSTORE_PASS" >> "$GITHUB_ENV"
+          else
+            echo "::warning::No release keystore secret found - using a THROWAWAY key. The APK installs fine, but you cannot publish updates with it. See docs/URDU_SETUP_GUIDE.md."
+            keytool -genkeypair -v -keystore "$HOME/keys/release.keystore" -storepass temp-pass-123 -alias temp \
+              -keypass temp-pass-123 -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Temp,O=Temp,C=US"
+            echo "REL_USER=temp" >> "$GITHUB_ENV"
+            echo "REL_PASS=temp-pass-123" >> "$GITHUB_ENV"
+          fi
+
+      - name: Point Godot at the SDK, JDK and debug keystore
+        run: |
+          mkdir -p "$HOME/.config/godot"
+          cat > "$HOME/.config/godot/editor_settings-4.5.tres" <<SETTINGS
+          [gd_resource type="EditorSettings" format=3]
+
+          [resource]
+          export/android/android_sdk_path = "${ANDROID_HOME}"
+          export/android/java_sdk_path = "${JAVA_HOME}"
+          export/android/debug_keystore = "$HOME/keys/debug.keystore"
+          export/android/debug_keystore_user = "androiddebugkey"
+          export/android/debug_keystore_pass = "android"
+          SETTINGS
+          sed -i 's/^ *//' "$HOME/.config/godot/editor_settings-4.5.tres"
+
+      - name: Use Gradle build when the AdMob plugin is in the repo
+        run: |
+          if [ -d addons/admob ]; then
+            if [ ! -d android/build ]; then
+              echo "Creating Android build template (what 'Install Android Build Template' does)"
+              mkdir -p android/build
+              unzip -q "$HOME/.local/share/godot/export_templates/${GODOT_TEMPLATE_DIR}/android_source.zip" -d android/build
+              echo "${GODOT_TEMPLATE_DIR}" > android/.build_version
+            fi
+            sed -i 's#gradle_build/use_gradle_build=false#gradle_build/use_gradle_build=true#' export_presets.cfg
+            echo "Gradle build ON (AdMob plugin found)"
+          else
+            echo "::warning::addons/admob not found - building WITHOUT ads. Add the plugin (docs/URDU_SETUP_GUIDE.md step 3) for real ads."
+          fi
+
+      - name: Import project and fail on any script error
+        run: |
+          godot --headless --path . --import > import.log 2>&1 || true
+          godot --headless --path . --import >> import.log 2>&1 || true
+          godot --headless --path . --quit-after 120 >> import.log 2>&1 || true
+          if grep -E "SCRIPT ERROR: (Parse|Compile) Error" import.log; then
+            echo "::error::GDScript errors found - the game would crash on the phone. See the lines above."
+            exit 1
+          fi
+
+      - name: Run automated tests (first real GDScript check)
+        continue-on-error: true   # remove this line once the tests are green on your machine
+        run: godot --headless --path . -s tests/run_tests.gd
+
+      - name: Export debug APK (test ads)
+        run: |
+          mkdir -p build
+          godot --headless --path . --export-debug "Android Debug" build/BubbleBlastPro-debug.apk
+
+      - name: Export release APK (real ads)
+        run: |
+          export GODOT_ANDROID_KEYSTORE_RELEASE_PATH="$HOME/keys/release.keystore"
+          export GODOT_ANDROID_KEYSTORE_RELEASE_USER="$REL_USER"
+          export GODOT_ANDROID_KEYSTORE_RELEASE_PASSWORD="$REL_PASS"
+          godot --headless --path . --export-release "Android Release" build/BubbleBlastPro-release.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: BubbleBlastPro-apk
+          path: build/*.apk
+          if-no-files-found: error
