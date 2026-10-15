@@ -1,0 +1,31 @@
+{
+ "version": 2,
+ "id": 6,
+ "name": "Little Lost Friends",
+ "world": 1,
+ "boss": false,
+ "colors": 4,
+ "shots": 10,
+ "time_limit": 0,
+ "descent": {
+  "shot": 7.7,
+  "miss": 17.3
+ },
+ "objective": {
+  "type": "rescue",
+  "target": 3
+ },
+ "star_scores": [
+  1150,
+  1650
+ ],
+ "tip": "Free the critters by popping bubbles next to them.",
+ "rows": [
+  "1111111211",
+  "211111013",
+  "2*30110013",
+  "210123121",
+  "223222*131",
+  "21122220*"
+ ]
+}

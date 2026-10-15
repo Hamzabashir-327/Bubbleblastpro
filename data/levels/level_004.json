@@ -1,0 +1,30 @@
+{
+ "version": 2,
+ "id": 4,
+ "name": "Four Winds",
+ "world": 1,
+ "boss": false,
+ "colors": 4,
+ "shots": 17,
+ "time_limit": 0,
+ "descent": {
+  "shot": 6.2,
+  "miss": 13.8
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1750,
+  2550
+ ],
+ "tip": "",
+ "rows": [
+  "3300112233",
+  "223300112",
+  "1122330011",
+  "001122330",
+  "1122330011",
+  "223300112"
+ ]
+}

@@ -1,0 +1,30 @@
+{
+ "version": 2,
+ "id": 9,
+ "name": "Locked Doors",
+ "world": 1,
+ "boss": false,
+ "colors": 4,
+ "shots": 11,
+ "time_limit": 0,
+ "descent": {
+  "shot": 10.0,
+  "miss": 22.2
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1350,
+  1950
+ ],
+ "tip": "Locked bubbles open when a neighbour pops.",
+ "rows": [
+  "3221001223",
+  "332101233",
+  "10321123AB",
+  "103323301",
+  "2110D30112",
+  "C21030122"
+ ]
+}

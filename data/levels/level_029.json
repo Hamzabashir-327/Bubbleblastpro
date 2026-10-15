@@ -1,0 +1,33 @@
+{
+ "version": 2,
+ "id": 29,
+ "name": "Phoenix Trial",
+ "world": 3,
+ "boss": false,
+ "colors": 6,
+ "shots": 28,
+ "time_limit": 0,
+ "descent": {
+  "shot": 5.2,
+  "miss": 11.5
+ },
+ "objective": {
+  "type": "score",
+  "target": 1500
+ },
+ "star_scores": [
+  1450,
+  2100
+ ],
+ "tip": "",
+ "rows": [
+  "3c2100bc23",
+  "332#0123d",
+  "F43211#34f",
+  "5e33c33e5",
+  "a5f4334550",
+  "005ED4500",
+  "2b0544f012",
+  "21A05aa#2"
+ ]
+}

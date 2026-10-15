@@ -1,0 +1,32 @@
+{
+ "version": 2,
+ "id": 11,
+ "name": "Tidal Pearls",
+ "world": 2,
+ "boss": false,
+ "colors": 4,
+ "shots": 9,
+ "time_limit": 0,
+ "descent": {
+  "shot": 10.5,
+  "miss": 23.4
+ },
+ "objective": {
+  "type": "score",
+  "target": 900
+ },
+ "star_scores": [
+  900,
+  1300
+ ],
+ "tip": "",
+ "rows": [
+  "2103223012",
+  ".0321230.",
+  "..2c1122..",
+  "...0a0...",
+  "..221122..",
+  ".ad21230.",
+  "2103223012"
+ ]
+}

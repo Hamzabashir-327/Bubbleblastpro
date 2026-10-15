@@ -1,0 +1,37 @@
+{
+  "game_title": "Bubble Blast Pro",
+  "game_subtitle": "Mystic Worlds",
+  "version_name": "0.1.0",
+  "level_count": 30,
+  "privacy_policy_url": "https://example.com/REPLACE-WITH-YOUR-PRIVACY-POLICY",
+  "support_email": "REPLACE_WITH_SUPPORT_EMAIL",
+  "economy": {
+    "starting_coins": 100,
+    "level_win_coins": 15,
+    "coins_per_star": 10,
+    "first_clear_bonus": 20,
+    "rewarded_coin_bonus": 50,
+    "rewarded_coin_daily_cap": 5,
+    "continue_extra_shots": 5,
+    "double_coins_enabled": true
+  },
+  "powers": {
+    "rainbow":      {"price": 120, "max_per_level": 3, "cooldown_shots": 2, "start": 1},
+    "bomb":         {"price": 150, "max_per_level": 2, "cooldown_shots": 3, "start": 1},
+    "lightning":    {"price": 150, "max_per_level": 2, "cooldown_shots": 3, "start": 1},
+    "fireball":     {"price": 180, "max_per_level": 2, "cooldown_shots": 3, "start": 1},
+    "color_switch": {"price": 60,  "max_per_level": 4, "cooldown_shots": 0, "start": 2},
+    "time_freeze":  {"price": 100, "max_per_level": 2, "cooldown_shots": 0, "start": 1}
+  },
+  "time_freeze_seconds": 10.0,
+  "daily_rewards": [
+    {"coins": 30},
+    {"coins": 40},
+    {"coins": 50, "power": "color_switch"},
+    {"coins": 60},
+    {"coins": 80, "power": "rainbow"},
+    {"coins": 100},
+    {"coins": 150, "power": "bomb"}
+  ],
+  "debug_tools_in_debug_builds": true
+}

@@ -1,0 +1,33 @@
+{
+ "version": 2,
+ "id": 27,
+ "name": "Caged Constellation",
+ "world": 3,
+ "boss": false,
+ "colors": 6,
+ "shots": 17,
+ "time_limit": 0,
+ "descent": {
+  "shot": 6.2,
+  "miss": 13.7
+ },
+ "objective": {
+  "type": "rescue",
+  "target": 4
+ },
+ "star_scores": [
+  1250,
+  1750
+ ],
+ "tip": "",
+ "rows": [
+  "5442cfe422",
+  "44c25d044",
+  "eAc....522",
+  "445...#c2",
+  "044....*21",
+  "*44...*33",
+  "043Aaa5BD#",
+  "4421*#f14"
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "version": 2,
+ "id": 19,
+ "name": "Pearl Rush",
+ "world": 2,
+ "boss": false,
+ "colors": 5,
+ "shots": 11,
+ "time_limit": 0,
+ "descent": {
+  "shot": 12.7,
+  "miss": 27.9
+ },
+ "objective": {
+  "type": "score",
+  "target": 1150
+ },
+ "star_scores": [
+  1200,
+  1750
+ ],
+ "tip": "",
+ "rows": [
+  "322b001223",
+  "332b0#233",
+  "0432b1c340",
+  "04332d340",
+  "10043d400#",
+  "1b0434011",
+  "3210e4ab2d"
+ ]
+}

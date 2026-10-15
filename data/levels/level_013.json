@@ -1,0 +1,31 @@
+{
+ "version": 2,
+ "id": 13,
+ "name": "Deep Current",
+ "world": 2,
+ "boss": false,
+ "colors": 5,
+ "shots": 33,
+ "time_limit": 0,
+ "descent": {
+  "shot": 6.7,
+  "miss": 14.8
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1400,
+  2000
+ ],
+ "tip": "",
+ "rows": [
+  "2014eee444",
+  "1#0e434e1",
+  "122041#2d1",
+  "2c0441241",
+  "e434424211",
+  "224422411",
+  "3224231111"
+ ]
+}

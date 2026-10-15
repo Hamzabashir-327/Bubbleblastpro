@@ -1,0 +1,32 @@
+{
+ "version": 2,
+ "id": 26,
+ "name": "Ash Valley",
+ "world": 3,
+ "boss": false,
+ "colors": 6,
+ "shots": 28,
+ "time_limit": 0,
+ "descent": {
+  "shot": 7.6,
+  "miss": 16.8
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1350,
+  1950
+ ],
+ "tip": "",
+ "rows": [
+  "054d33345a",
+  ".4321234.",
+  "..32BB#3..",
+  "...101...",
+  "...1aaB...",
+  "..21112..",
+  ".e43#2d44.",
+  "0f4323#F0"
+ ]
+}

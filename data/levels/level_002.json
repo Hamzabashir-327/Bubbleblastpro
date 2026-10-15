@@ -1,0 +1,30 @@
+{
+ "version": 2,
+ "id": 2,
+ "name": "Gentle Slope",
+ "world": 1,
+ "boss": false,
+ "colors": 3,
+ "shots": 5,
+ "time_limit": 0,
+ "descent": {
+  "shot": 4.9,
+  "miss": 11.0
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1000,
+  1450
+ ],
+ "tip": "Bounce shots off the walls to reach tricky spots.",
+ "rows": [
+  "0000000022",
+  "..00222..",
+  "..0222200.",
+  ".2002200.",
+  ".222100111",
+  "022201111"
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "version": 2,
+ "id": 3,
+ "name": "Score Rush",
+ "world": 1,
+ "boss": false,
+ "colors": 3,
+ "shots": 4,
+ "time_limit": 0,
+ "descent": {
+  "shot": 5.1,
+  "miss": 11.4
+ },
+ "objective": {
+  "type": "score",
+  "target": 650
+ },
+ "star_scores": [
+  950,
+  1350
+ ],
+ "tip": "Reach the target score before the bubbles reach the line.",
+ "rows": [
+  "1222222222",
+  "112220212",
+  "0112222022",
+  "111201122",
+  "0020222211",
+  "011020111"
+ ]
+}

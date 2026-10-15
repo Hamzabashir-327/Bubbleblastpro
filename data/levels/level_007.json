@@ -1,0 +1,31 @@
+{
+ "version": 2,
+ "id": 7,
+ "name": "Crystal Heart",
+ "world": 1,
+ "boss": false,
+ "colors": 4,
+ "shots": 10,
+ "time_limit": 0,
+ "descent": {
+  "shot": 8.0,
+  "miss": 17.8
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  800,
+  1200
+ ],
+ "tip": "",
+ "rows": [
+  "02c2222223",
+  "...220...",
+  ".b0022222.",
+  "000002211",
+  ".a0000201.",
+  "...00d...",
+  "....0a...."
+ ]
+}

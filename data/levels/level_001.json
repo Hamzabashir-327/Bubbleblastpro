@@ -1,0 +1,29 @@
+{
+ "version": 2,
+ "id": 1,
+ "name": "First Pop",
+ "world": 1,
+ "boss": false,
+ "colors": 3,
+ "shots": 8,
+ "time_limit": 0,
+ "descent": {
+  "shot": 4.1,
+  "miss": 9.3
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  750,
+  1100
+ ],
+ "tip": "Bubbles slowly sink. Clear them all before they touch the red line!",
+ "rows": [
+  "2211110000",
+  "222011121",
+  "2220101222",
+  "220011111",
+  "2200000001"
+ ]
+}

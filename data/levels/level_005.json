@@ -1,0 +1,30 @@
+{
+ "version": 2,
+ "id": 5,
+ "name": "Frozen Dew",
+ "world": 1,
+ "boss": false,
+ "colors": 4,
+ "shots": 13,
+ "time_limit": 0,
+ "descent": {
+  "shot": 6.3,
+  "miss": 14.2
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1150,
+  1700
+ ],
+ "tip": "Ice bubbles crack on the first match and pop on the next.",
+ "rows": [
+  "3221001223",
+  "..c1012..",
+  "..3211230.",
+  ".0332330.",
+  ".1b0d30112",
+  "cc103a122"
+ ]
+}

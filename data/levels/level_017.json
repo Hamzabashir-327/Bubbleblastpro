@@ -1,0 +1,31 @@
+{
+ "version": 2,
+ "id": 17,
+ "name": "Stone Lagoon",
+ "world": 2,
+ "boss": false,
+ "colors": 5,
+ "shots": 25,
+ "time_limit": 0,
+ "descent": {
+  "shot": 8.6,
+  "miss": 19.0
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1600,
+  2300
+ ],
+ "tip": "",
+ "rows": [
+  "4443444444",
+  "...C24C..",
+  "..1132#0..",
+  "..14c232.",
+  ".0d#1c222.",
+  ".0330114d",
+  "1#0Ee11433"
+ ]
+}

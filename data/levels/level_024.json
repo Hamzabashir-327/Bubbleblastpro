@@ -1,0 +1,33 @@
+{
+ "version": 2,
+ "id": 24,
+ "name": "Cinder Chain",
+ "world": 3,
+ "boss": false,
+ "colors": 6,
+ "shots": 40,
+ "time_limit": 0,
+ "descent": {
+  "shot": 2.9,
+  "miss": 6.5
+ },
+ "objective": {
+  "type": "score",
+  "target": 1650
+ },
+ "star_scores": [
+  1600,
+  2350
+ ],
+ "tip": "",
+ "rows": [
+  "3d445f0ab1",
+  "2233445f0",
+  "b12...44f5",
+  "00b#cc3d4",
+  "1122334455",
+  "c23344F50",
+  "d3E...0a11",
+  "2cDD445#0"
+ ]
+}

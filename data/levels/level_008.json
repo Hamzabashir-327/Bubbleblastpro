@@ -1,0 +1,30 @@
+{
+ "version": 2,
+ "id": 8,
+ "name": "Rock Garden",
+ "world": 1,
+ "boss": false,
+ "colors": 4,
+ "shots": 17,
+ "time_limit": 0,
+ "descent": {
+  "shot": 6.9,
+  "miss": 15.4
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1150,
+  1650
+ ],
+ "tip": "Stone bubbles never pop. Cut them loose from above!",
+ "rows": [
+  "0011233011",
+  "012230011",
+  "1122#00122",
+  "223301122",
+  "#230011233",
+  "330112230"
+ ]
+}

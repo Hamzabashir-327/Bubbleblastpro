@@ -1,0 +1,31 @@
+{
+ "version": 2,
+ "id": 14,
+ "name": "Frost Reef",
+ "world": 2,
+ "boss": false,
+ "colors": 5,
+ "shots": 25,
+ "time_limit": 0,
+ "descent": {
+  "shot": 9.3,
+  "miss": 20.6
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1400,
+  2000
+ ],
+ "tip": "",
+ "rows": [
+  "3344001122",
+  "...d44...",
+  ".b223D4#0.",
+  "00bB2c334",
+  ".1#23344a.",
+  "...3E4...",
+  "....00...."
+ ]
+}

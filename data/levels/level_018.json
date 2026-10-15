@@ -1,0 +1,31 @@
+{
+ "version": 2,
+ "id": 18,
+ "name": "Lockjaw Bay",
+ "world": 2,
+ "boss": false,
+ "colors": 5,
+ "shots": 13,
+ "time_limit": 175,
+ "descent": {
+  "shot": 8.8,
+  "miss": 19.4
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1200,
+  1700
+ ],
+ "tip": "",
+ "rows": [
+  "0011233400",
+  ".12C3440.",
+  "..22d440..",
+  "...34A...",
+  "..#440#b..",
+  ".340A112.",
+  "d4E0ab2c34"
+ ]
+}

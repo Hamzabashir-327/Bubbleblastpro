@@ -1,0 +1,52 @@
+{
+  "_comment": "Debug builds ALWAYS use Google's public test IDs (never click/serve real ads while developing). A RELEASE build uses the 'production' block when test_mode is false. Production IDs below are the owner's real AdMob IDs (AdMob app 'BubbleBlastPro'). The App ID (with ~) is NOT read from this file: set it in Godot -> Project Settings -> Admob -> Android.",
+  "test_mode": false,
+  "enabled": true,
+  "test": {
+    "app_id": "ca-app-pub-3940256099942544~3347511713",
+    "banner": "ca-app-pub-3940256099942544/6300978111",
+    "interstitial": "ca-app-pub-3940256099942544/1033173712",
+    "rewarded": "ca-app-pub-3940256099942544/5224354917"
+  },
+  "production": {
+    "app_id": "ca-app-pub-3697668089255708~3506182429",
+    "banner": "ca-app-pub-3697668089255708/5944643503",
+    "interstitial": "ca-app-pub-3697668089255708/7253855747",
+    "rewarded": "ca-app-pub-3697668089255708/2001529065"
+  },
+  "banner": {
+    "screens": [
+      "main_menu",
+      "level_map",
+      "shop",
+      "daily_reward",
+      "level_end"
+    ],
+    "retry_backoff_seconds": [
+      15,
+      30,
+      60,
+      120,
+      300
+    ]
+  },
+  "interstitial": {
+    "every_n_breaks": 2,
+    "min_interval_seconds": 45,
+    "max_per_session": 20,
+    "first_allowed_level": 1,
+    "preload": true
+  },
+  "rewarded": {
+    "reload_backoff_seconds": [
+      10,
+      30,
+      60,
+      120
+    ]
+  },
+  "formats_not_used": [
+    "rewarded_interstitial",
+    "app_open"
+  ]
+}

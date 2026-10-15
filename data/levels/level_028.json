@@ -1,0 +1,32 @@
+{
+ "version": 2,
+ "id": 28,
+ "name": "Magma Lock",
+ "world": 3,
+ "boss": false,
+ "colors": 6,
+ "shots": 20,
+ "time_limit": 180,
+ "descent": {
+  "shot": 9.1,
+  "miss": 20.0
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1500,
+  2200
+ ],
+ "tip": "",
+ "rows": [
+  "a011233455",
+  "...23E...",
+  "...234e5..",
+  "..33455..",
+  "..34#F501.",
+  ".#Eff001.",
+  ".445501bcd",
+  "445A012#3"
+ ]
+}

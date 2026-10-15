@@ -1,0 +1,31 @@
+{
+ "version": 2,
+ "id": 12,
+ "name": "Coral Maze",
+ "world": 2,
+ "boss": false,
+ "colors": 5,
+ "shots": 22,
+ "time_limit": 180,
+ "descent": {
+  "shot": 9.1,
+  "miss": 20.2
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1500,
+  2150
+ ],
+ "tip": "Timed level. Time Freeze can pause the clock.",
+ "rows": [
+  "0a112d3400",
+  "01223#400",
+  "1.22.44.11",
+  "2.d3.00.1",
+  "2.34.00.22",
+  "3.e0.11.3",
+  "3.40.12.34"
+ ]
+}

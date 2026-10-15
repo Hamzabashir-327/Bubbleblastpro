@@ -1,0 +1,30 @@
+{
+ "version": 2,
+ "id": 20,
+ "name": "Leviathan's Keep",
+ "world": 2,
+ "boss": true,
+ "colors": 5,
+ "shots": 31,
+ "time_limit": 0,
+ "descent": {
+  "shot": 7.8,
+  "miss": 17.2
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1450,
+  2100
+ ],
+ "tip": "",
+ "rows": [
+  "b1344e4422",
+  "*a1ee01E2",
+  ".0E#43A#2.",
+  ".4b*4*c2.",
+  "...#2*2...",
+  "....d...."
+ ]
+}

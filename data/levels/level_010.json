@@ -1,0 +1,30 @@
+{
+ "version": 2,
+ "id": 10,
+ "name": "Guardian of the Grove",
+ "world": 1,
+ "boss": true,
+ "colors": 5,
+ "shots": 24,
+ "time_limit": 0,
+ "descent": {
+  "shot": 10.3,
+  "miss": 22.8
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  1250,
+  1800
+ ],
+ "tip": "Boss puzzle: a bit of everything. Good luck!",
+ "rows": [
+  "33dc22e00a",
+  "332*44441",
+  ".2#**04#E.",
+  ".4420000.",
+  "...412D...",
+  "....2...."
+ ]
+}

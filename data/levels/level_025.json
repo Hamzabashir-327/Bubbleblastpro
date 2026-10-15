@@ -1,0 +1,32 @@
+{
+ "version": 2,
+ "id": 25,
+ "name": "Mirage Run",
+ "world": 3,
+ "boss": false,
+ "colors": 5,
+ "shots": 15,
+ "time_limit": 135,
+ "descent": {
+  "shot": 7.8,
+  "miss": 17.3
+ },
+ "objective": {
+  "type": "rescue",
+  "target": 4
+ },
+ "star_scores": [
+  1450,
+  2100
+ ],
+ "tip": "",
+ "rows": [
+  "114e4e0000",
+  "121331*44",
+  "444002b#00",
+  "4B*03A010",
+  "41100c01**",
+  "00b3c4111",
+  "0#103442bB"
+ ]
+}

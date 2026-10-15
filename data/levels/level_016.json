@@ -1,0 +1,32 @@
+{
+ "version": 2,
+ "id": 16,
+ "name": "Whale Song",
+ "world": 2,
+ "boss": false,
+ "colors": 5,
+ "shots": 15,
+ "time_limit": 0,
+ "descent": {
+  "shot": 10.0,
+  "miss": 22.1
+ },
+ "objective": {
+  "type": "score",
+  "target": 1200
+ },
+ "star_scores": [
+  1150,
+  1700
+ ],
+ "tip": "",
+ "rows": [
+  "1043223401",
+  "4432123e4",
+  "4#2...2234",
+  "321a0012#",
+  "4d2c112234",
+  "443212344",
+  "104...3401"
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "version": 2,
+ "id": 15,
+ "name": "Sunken Cage",
+ "world": 2,
+ "boss": false,
+ "colors": 5,
+ "shots": 13,
+ "time_limit": 140,
+ "descent": {
+  "shot": 9.8,
+  "miss": 21.6
+ },
+ "objective": {
+  "type": "rescue",
+  "target": 4
+ },
+ "star_scores": [
+  1800,
+  2550
+ ],
+ "tip": "",
+ "rows": [
+  "10b1121221",
+  "001444421",
+  "0000444444",
+  "*43244111",
+  "2#*2001441",
+  "0*2130444",
+  "02111*0401"
+ ]
+}

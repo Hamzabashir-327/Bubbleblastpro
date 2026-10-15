@@ -1,0 +1,32 @@
+{
+ "version": 2,
+ "id": 23,
+ "name": "Obsidian Gate",
+ "world": 3,
+ "boss": false,
+ "colors": 5,
+ "shots": 7,
+ "time_limit": 0,
+ "descent": {
+  "shot": 20.2,
+  "miss": 44.5
+ },
+ "objective": {
+  "type": "clear"
+ },
+ "star_scores": [
+  850,
+  1250
+ ],
+ "tip": "",
+ "rows": [
+  "4441cc2222",
+  "...2#2...",
+  "..33223#..",
+  ".433C2c1.",
+  ".DA3d2221.",
+  "..c3d31..",
+  "...#b11...",
+  "....1...."
+ ]
+}
